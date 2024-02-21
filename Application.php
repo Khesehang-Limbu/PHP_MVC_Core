@@ -5,6 +5,11 @@ use evil\phpmvc\db\Database;
 
 class Application
 {
+    public const EVENT_BEFORE_REQUEST = "before";
+    public const EVENT_AFTER_REQUEST = "after";
+
+    protected array $eventListeners = [];
+
     public string $layout = "main";
     public static Application $app;
     public Router $router;
@@ -45,6 +50,7 @@ class Application
 
     public function run()
     {
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Throwable $th) {
@@ -72,5 +78,17 @@ class Application
     public static function isGuest()
     {
         return !self::$app->user;
+    }
+
+    public function on($event, $callback){
+        $this->eventListeners[$event][] = $callback;
+    }
+
+    public function triggerEvent($event){
+        $callbacks = $this->eventListeners[$event];
+
+        foreach ($callbacks as $event) {
+            call_user_func($event);
+        }
     }
 }

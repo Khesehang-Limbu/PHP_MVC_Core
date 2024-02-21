@@ -1,0 +1,15 @@
+{
+    "name": "evil/php-mvc-core",
+    "autoload": {
+        "psr-4": {
+            "Evil\\PhpMvcCore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Khesehang Limbu",
+            "email": "khesehang81@gmail.com"
+        }
+    ],
+    "require": {}
+}

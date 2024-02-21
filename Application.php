@@ -1,7 +1,7 @@
 <?php
 
-namespace app\core;
-use app\core\db\Database;
+namespace evil\phpmvc;
+use evil\phpmvc\db\Database;
 
 class Application
 {

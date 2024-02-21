@@ -1,5 +1,5 @@
 <?php
-namespace app\core\exceptions;
+namespace evil\phpmvc\exceptions;
 
 class NotFoundException extends \Exception{
     protected $code = 404;

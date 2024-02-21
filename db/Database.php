@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core\db;
+namespace evil\phpmvc\db;
 
 use PDO;
-use app\core\Application;
+use evil\phpmvc\Application;
 
 class Database
 {

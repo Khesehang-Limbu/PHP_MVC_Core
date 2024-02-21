@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core\form;
+namespace evil\phpmvc\form;
 
-use app\core\form\BaseField;
-use app\core\Model;
+use evil\phpmvc\form\BaseField;
+use evil\phpmvc\Model;
 
 class TextAreaField extends BaseField
 {

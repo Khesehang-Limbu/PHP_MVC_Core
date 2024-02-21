@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace evil\phpmvc;
 
 abstract class Model
 {

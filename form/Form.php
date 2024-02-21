@@ -1,6 +1,6 @@
 <?php
-namespace app\core\form;
-use app\core\Model;
+namespace evil\phpmvc\form;
+use evil\phpmvc\Model;
 
 class Form {
     public static function begin($method, $action) {

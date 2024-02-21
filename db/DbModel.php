@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\db;
-use app\core\Model;
-use app\core\Application;
+namespace evil\phpmvc\db;
+use evil\phpmvc\Model;
+use evil\phpmvc\Application;
 
 abstract class DbModel extends Model
 {

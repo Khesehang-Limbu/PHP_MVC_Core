@@ -1,5 +1,5 @@
 <?php
-namespace app\core\exceptions;
+namespace evil\phpmvc\exceptions;
 
 class ForbiddenException extends \Exception{
     protected $code = 403;

@@ -1,5 +1,5 @@
 <?php
-namespace app\core;
+namespace evil\phpmvc;
 
 class Request{
     public function getPath(){

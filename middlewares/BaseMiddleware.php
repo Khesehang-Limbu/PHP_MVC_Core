@@ -1,5 +1,5 @@
 <?php
-namespace app\core\middlewares;
+namespace evil\phpmvc\middlewares;
 
 abstract class BaseMiddleware {
     abstract public function execute();

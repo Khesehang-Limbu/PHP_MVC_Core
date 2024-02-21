@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace evil\phpmvc;
 
-use app\core\exceptions\NotFoundException;
+use evil\phpmvc\exceptions\NotFoundException;
 
 class Router
 {
@@ -46,7 +46,7 @@ class Router
             $controller->action = $callback[1];
             $callback[0] = $controller;
 
-            /* @var \app\core\Controller  $controller */
+            /* @var \evil\phpmvc\Controller  $controller */
 
             foreach ($controller->getMiddlewares() as $middleware) {
                 $middleware->execute();

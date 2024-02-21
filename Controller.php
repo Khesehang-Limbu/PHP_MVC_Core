@@ -1,7 +1,7 @@
 <?php
-namespace app\core;
+namespace evil\phpmvc;
 
-use app\core\middlewares\BaseMiddleware;
+use evil\phpmvc\middlewares\BaseMiddleware;
 
 class Controller{
     public string $layout = "main";

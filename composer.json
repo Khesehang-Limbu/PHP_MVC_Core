@@ -2,7 +2,7 @@
     "name": "evil/php-mvc-core",
     "autoload": {
         "psr-4": {
-            "Evil\\PhpMvcCore\\": "src/"
+            "evil\\phpmvc\\": "."
         }
     },
     "authors": [

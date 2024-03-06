@@ -31,7 +31,6 @@ class Router
         $path = $this->request->getPath();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
-
         if (!$callback) {
             throw new NotFoundException();
         }
@@ -45,6 +44,7 @@ class Router
             Application::$app->controller = $controller;
             $controller->action = $callback[1];
             $callback[0] = $controller;
+
 
             /* @var \evil\phpmvc\Controller  $controller */
 

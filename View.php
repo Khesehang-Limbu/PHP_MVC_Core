@@ -2,13 +2,14 @@
 
 namespace evil\phpmvc;
 
-class View {
+class View
+{
     public string $title = "";
 
     public function renderView($view, $params = [])
     {
         $viewContent = $this->renderOnlyView($view, $params);
-        $layout = $this->layoutContent($view);
+        $layout = $this->renderContent($viewContent);
         return str_replace("{{content}}", $viewContent, $layout);
     }
 
@@ -16,16 +17,17 @@ class View {
     {
         $layout = Application::$app->layout;
 
-        if(Application::$app->controller){
+        if (Application::$app->controller??false) {
             $layout = Application::$app->controller->layout;
         }
 
         ob_start();
-        include_once(Application::$ROOT_DIR . "/../views/layouts/$layout.php");
+        include_once(realpath(Application::$ROOT_DIR . "/../views/layouts/$layout.php"));
         return ob_get_clean();
     }
 
-    public function renderContent($viewContent){
+    public function renderContent($viewContent)
+    {
         $layoutContent = $this->layoutContent();
         return str_replace("{{content}}", $viewContent, $layoutContent);
     }
@@ -36,11 +38,7 @@ class View {
             $$key = $value;
         }
         ob_start();
-        if (str_contains($view, "admin")) {
-            include_once Application::$ROOT_DIR . "/../views/admin/$view.php";
-        } else {
-            include_once Application::$ROOT_DIR . "/../views/$view.php";
-        }
+        include_once realpath(Application::$ROOT_DIR . "/../views/$view.php");
         return ob_get_clean();
     }
 }

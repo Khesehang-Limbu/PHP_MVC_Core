@@ -3,8 +3,8 @@ namespace evil\phpmvc\form;
 use evil\phpmvc\Model;
 
 class Form {
-    public static function begin($method, $action) {
-        echo "<form method='$method' action='$action' >";
+    public static function begin($method, $action, $media = "") {
+        echo "<form method='$method' action='$action' enctype='$media'>";
         return new Form();
     }
 

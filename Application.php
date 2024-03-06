@@ -23,7 +23,7 @@ class Application
     public string $userClass;
 
     public static $ROOT_DIR;
-    public static Controller $controller;
+    public Controller $controller;
 
     public function __construct($rootPath, array $config)
     {
@@ -50,7 +50,6 @@ class Application
 
     public function run()
     {
-        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         try {
             echo $this->router->resolve();
         } catch (\Throwable $th) {
